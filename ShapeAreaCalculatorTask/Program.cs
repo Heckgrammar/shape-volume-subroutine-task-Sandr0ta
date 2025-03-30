@@ -10,7 +10,9 @@
             // Rectangle
             // Pentagon
             // Octagon
-             Console.Write("Enter radius of the circle: ");
+        static void Main(string[] args)
+        {
+            Console.Write("Enter radius of the circle: ");
             int radius = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Area of Circle: " + AreaOfCircle(radius));
 
@@ -34,15 +36,17 @@
 
             Console.Write("Enter side length of the octagon: ");
             int sideLengthOctagon = Convert.ToInt32(Console.ReadLine());
-        }
-         static double AreaOfCircle(int radius)
-        {
-            return Math.PI * radius * radius;
+            Console.WriteLine("Area of Octagon: " + AreaOfOctagon(sideLengthOctagon));
         }
 
-        static double AreaOfTriangle(int baseLength, int height)
+        static int AreaOfCircle(int radius)
         {
-            return 0.5 * baseLength * height;
+            return (int)(Math.PI * radius * radius);
+        }
+
+        static int AreaOfTriangle(int baseLength, int height)
+        {
+            return (baseLength * height) / 2;
         }
 
         static int AreaOfRectangle(int length, int width)
@@ -50,14 +54,14 @@
             return length * width;
         }
 
-        static double AreaOfPentagon(int sideLength, int apothem)
+        static int AreaOfPentagon(int sideLength, int apothem)
         {
-            return (5 * sideLength * apothem) / 2.0;
+            return (5 * sideLength * apothem) / 2;
         }
 
-        static double AreaOfOctagon(int sideLength)
+        static int AreaOfOctagon(int sideLength)
         {
-            return 2 * (1 + Math.Sqrt(2)) * sideLength * sideLength;
+            return (int)(2 * (1 + Math.Sqrt(2)) * sideLength * sideLength);
         }
     }
 }
